@@ -11,7 +11,7 @@ setuptools.setup(
     version="0.0.1",
     author="Jacob Thompson",
     author_email="Gothingbop@gmail.com",
-    description="My Gmail API Wrapper",
+    description="My AWS boto3 Wrapper",
     long_description=long_description,
     long_description_content_type="text/markdown",
     url="https://github.com/Gothingbop/JT_AWS",
