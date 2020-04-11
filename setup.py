@@ -14,7 +14,7 @@ setuptools.setup(
     description="My Gmail API Wrapper",
     long_description=long_description,
     long_description_content_type="text/markdown",
-    url="",
+    url="https://github.com/Gothingbop/JT_AWS",
     packages=setuptools.find_packages(),
     classifiers=[
         "Programming Language :: Python :: 3",
