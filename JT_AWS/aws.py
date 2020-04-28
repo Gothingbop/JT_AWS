@@ -1,6 +1,7 @@
 import time
 import boto3
-from zip_util import *
+from JT_AWS.zip_util import *
+from JT_AWS.pip_util import *
 
 try:
     import paramiko
@@ -234,7 +235,7 @@ class Lambda_Client:
         print('Updated!')
         return response
 
-    def UpdateLambdaFromFolder(self, lambda_name: str, folder_path: str):
+    def UpdateLambdaFromFolder(self, lambda_name: str, folder_path: str, requirements_path: str = None):
         """
         Updates a AWS Lambda function using the given folder
 
@@ -242,8 +243,12 @@ class Lambda_Client:
 
         :param lambda_name: Name of the Lambda function to be updated
         :param folder_path: Path to the folder to be uploaded to the function
+        :param requirements_path: (Optional) Path to requirements that will be installed
         :return: The response from Lambda
         """
+        if requirements_path:
+            print("Installing requirements")
+            InstallRequirements(requirements_path, folder_path)
         print("Zipping folder... ", end='')
         zip_file_path = ZipFolder(folder_path)
         print("Zipped!")

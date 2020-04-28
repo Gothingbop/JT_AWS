@@ -10,7 +10,9 @@ def ZipFolder(folder_path: str):
     :return: The path to the generated zip file
     """
     zip_file_path = "{}.zip".format(folder_path.strip('/\\'))
-    zip_file = zipfile.ZipFile(zip_file_path, mode='w+', compression=zipfile.ZIP_DEFLATED)
+    if os.path.exists(zip_file_path):
+        os.remove(zip_file_path)
+    zip_file = zipfile.ZipFile(zip_file_path, mode='x', compression=zipfile.ZIP_DEFLATED)
     for dir_path, dir_names, file_names in os.walk(folder_path):
         for file in file_names:
             file_path = '\\'.join([dir_path, file])
