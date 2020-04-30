@@ -8,7 +8,7 @@ with open('requirements', 'r') as file:
 
 setuptools.setup(
     name="JT_AWS",
-    version="0.0.4",
+    version="0.0.6",
     author="Jacob Thompson",
     author_email="Gothingbop@gmail.com",
     description="My AWS boto3 Wrapper",
